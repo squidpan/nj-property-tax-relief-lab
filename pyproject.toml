@@ -1,0 +1,18 @@
+[project]
+name = "nj-property-tax-relief-lab"
+version = "0.1.0"
+description = "Static SEO and decision-tool lab for New Jersey property-tax-relief guidance"
+requires-python = ">=3.13"
+dependencies = [
+  "Jinja2>=3.1,<4",
+  "PyYAML>=6.0,<7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
