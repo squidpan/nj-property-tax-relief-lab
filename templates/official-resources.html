@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-head"><p class="eyebrow">Primary sources</p><h1>Official New Jersey resources</h1><p class="lede">Use these New Jersey Division of Taxation resources for authoritative rules, filing, and updates.</p></section>
+<div class="cards">
+{% for source in sources %}<article class="card"><h2>{{ source.title }}</h2><p>{{ source.authority }}</p><p><a href="{{ source.url }}" rel="noopener">Open official source</a></p><p class="meta">Source status: {{ source.status }} · verified {{ source.verified_date }}</p></article>{% endfor %}
+</div>
+<section class="notice"><h2>Source precedence</h2><p>The site preserves older official instructions for traceability but uses current post-budget NJ program pages when an older document explicitly contains figures later superseded by enacted changes.</p></section>
+{% endblock %}

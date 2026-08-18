@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_title }}</title>
+  <meta name="description" content="{{ page_description }}">
+  <link rel="canonical" href="{{ base_url }}{{ canonical_path }}">
+  <link rel="stylesheet" href="/static/css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav-wrap">
+      <a class="brand" href="/">NJ Property Tax Relief Guide</a>
+      <nav aria-label="Primary">
+        <a href="/which-application/">Which application?</a>
+        <a href="/programs/">Programs</a>
+        <a href="/official-resources/">Official resources</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>Independent informational site.</strong> This site is not affiliated with the State of New Jersey and does not determine final eligibility or benefit amounts.</p>
+      <p>No names, addresses, Social Security numbers, banking information, tax returns, or ID.me credentials are collected by the decision tool.</p>
+      <p>Rules were last verified against official NJ sources on August 17, 2026.</p>
+    </div>
+  </footer>
+</body>
+</html>

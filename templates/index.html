@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <p class="eyebrow">2025 tax year · 2026 filing season</p>
+  <h1>NJ Property Tax Relief 2026</h1>
+  <p class="lede">Understand the ANCHOR, Senior Freeze, and Stay NJ programs and find the filing path that may apply to your situation.</p>
+  <div class="deadline"><strong>Current filing deadline:</strong> {{ filing_deadline }}</div>
+  <div class="actions">
+    <a class="button" href="/which-application/">Check my likely filing path</a>
+    <a class="button secondary" href="/programs/">Compare the programs</a>
+  </div>
+</section>
+<section>
+  <h2>What this site does</h2>
+  <div class="cards three">
+    <article class="card"><h3>1. Filing path</h3><p>See whether the simplified rules point you toward the ANCHOR path or PAS-1.</p></article>
+    <article class="card"><h3>2. Candidate programs</h3><p>See which programs appear worth checking based on the answers you provide.</p></article>
+    <article class="card"><h3>3. Official next step</h3><p>Continue to the New Jersey Division of Taxation for the actual application and final determination.</p></article>
+  </div>
+</section>
+<section class="notice"><h2>Important</h2><p>This is a simplified educational decision aid, not a tax filing service. Special circumstances can change the result. When that happens, the tool directs you to official NJ guidance rather than guessing.</p></section>
+{% endblock %}

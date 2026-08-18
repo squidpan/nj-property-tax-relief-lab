@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-head">
+  <p class="eyebrow">Decision aid</p>
+  <h1>Which NJ property tax relief path may apply to me?</h1>
+  <p class="lede">Answer only the questions needed for the simplified check. Your answers stay in your browser.</p>
+</section>
+<form id="relief-form" class="tool" novalidate>
+  <fieldset><legend>1. What best describes your residence?</legend>
+    <label><input type="radio" name="applicantType" value="homeowner" required> Homeowner</label>
+    <label><input type="radio" name="applicantType" value="renter"> Renter</label>
+    <label><input type="radio" name="applicantType" value="mobile_home_owner"> Mobile-home owner</label>
+  </fieldset>
+  <div class="field"><label for="age">2. Your age on December 31, 2025</label><input id="age" name="age" type="number" min="0" max="120" required></div>
+  <fieldset><legend>3. Were you actually receiving qualifying Social Security Disability or Railroad Retirement disability benefits by December 31, 2025?</legend>
+    <label><input type="radio" name="disability" value="yes" required> Yes</label>
+    <label><input type="radio" name="disability" value="no"> No</label>
+  </fieldset>
+  <div class="field"><label for="njIncome">4. 2025 NJ gross income (approximate)</label><input id="njIncome" name="njIncome" type="number" min="0" step="1" required></div>
+  <fieldset><legend>5. Was this your principal New Jersey residence on October 1, 2025?</legend><label><input type="radio" name="octResidence" value="yes" required> Yes</label><label><input type="radio" name="octResidence" value="no"> No</label></fieldset>
+  <fieldset><legend>6. For Senior Freeze: did you own and live in the home by December 31, 2022 and still own/live there on December 31, 2025?</legend><label><input type="radio" name="continuity" value="yes" required> Yes</label><label><input type="radio" name="continuity" value="no"> No</label><label><input type="radio" name="continuity" value="unknown"> Not sure</label></fieldset>
+  <div class="field"><label for="income2024">7. 2024 total annual income (approximate)</label><input id="income2024" name="income2024" type="number" min="0" step="1" required></div>
+  <div class="field"><label for="income2025">8. 2025 total annual income (approximate)</label><input id="income2025" name="income2025" type="number" min="0" step="1" required></div>
+  <fieldset><legend>9. For Stay NJ: if you are a homeowner, did you own and live in the home for all of 2025?</legend><label><input type="radio" name="fullYear" value="yes" required> Yes</label><label><input type="radio" name="fullYear" value="no"> No</label><label><input type="radio" name="fullYear" value="unknown"> Not sure / not applicable</label></fieldset>
+  <fieldset><legend>10. Does your situation involve a trust/life estate, deceased applicant, complex co-ownership, multiple residences, multi-unit property, assisted living/continuing care, P.I.L.O.T., or a prior Senior Freeze base-year issue?</legend><label><input type="radio" name="specialCase" value="yes" required> Yes / possibly</label><label><input type="radio" name="specialCase" value="no"> No</label></fieldset>
+  <button class="button" type="submit">Show simplified result</button>
+</form>
+<section id="result" class="result" hidden aria-live="polite"></section>
+<section class="notice"><h2>Privacy by design</h2><p>The questionnaire runs in your browser. It does not ask for identifying information and does not submit your answers to this site.</p></section>
+<script src="/static/js/decision-config.js"></script>
+<script src="/static/js/decision-tool.js"></script>
+{% endblock %}
