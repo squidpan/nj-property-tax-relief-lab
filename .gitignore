@@ -8,6 +8,7 @@ venv/
 
 # Generated site
 site/
+build/
 
 # Local/editor
 .vscode/

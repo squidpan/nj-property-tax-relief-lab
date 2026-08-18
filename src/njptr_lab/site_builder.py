@@ -9,19 +9,15 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from .loader import load_programs, load_sources
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
-TEMPLATES_DIR = REPO_ROOT / "templates"
-STATIC_DIR = REPO_ROOT / "static"
-
 
 def _display_date(value: str | date) -> str:
     parsed = value if isinstance(value, date) else date.fromisoformat(str(value))
     return f"{parsed.strftime('%B')} {parsed.day}, {parsed.year}"
 
 
-def _environment() -> Environment:
+def _environment(templates_dir: Path) -> Environment:
     return Environment(
-        loader=FileSystemLoader(TEMPLATES_DIR),
+        loader=FileSystemLoader(templates_dir),
         autoescape=select_autoescape(["html", "xml"]),
     )
 
@@ -43,15 +39,22 @@ def _decision_config(programs: dict) -> dict:
     }
 
 
-def build_site(output_dir: Path | None = None, base_url: str = "https://example.com") -> Path:
-    output = output_dir or (REPO_ROOT / "site")
+def build_site(
+    output_dir: Path | None = None,
+    base_url: str = "https://example.com",
+    root: Path | None = None,
+) -> Path:
+    root = root or Path.cwd()
+    templates_dir = root / "templates"
+    static_dir = root / "static"
+    output = output_dir or (root / "site")
     if output.exists():
         shutil.rmtree(output)
     output.mkdir(parents=True)
 
-    programs = load_programs()
-    sources = load_sources()
-    env = _environment()
+    programs = load_programs(root)
+    sources = load_sources(root)
+    env = _environment(templates_dir)
 
     deadline = programs["anchor"]["filing_deadline"]
     common = {
@@ -75,7 +78,7 @@ def build_site(output_dir: Path | None = None, base_url: str = "https://example.
         page_context["root"] = "../" if relative.count("/") else "./"
         target.write_text(env.get_template(template_name).render(**page_context), encoding="utf-8")
 
-    shutil.copytree(STATIC_DIR, output / "static", dirs_exist_ok=True)
+    shutil.copytree(static_dir, output / "static", dirs_exist_ok=True)
     config = "window.NJPTR_CONFIG = " + json.dumps(_decision_config(programs), indent=2) + ";\n"
     (output / "static/js/decision-config.js").write_text(config, encoding="utf-8")
 
