@@ -1,0 +1,32 @@
+program_id: stay_nj
+name: Stay NJ
+full_name: Stay NJ Property Tax Relief
+jurisdiction: NJ
+tax_year: 2025
+filing_deadline: 2026-11-02
+candidate_only: true
+applicant_types:
+  - homeowner
+age:
+  age_during_2025_at_least: 65
+ownership_and_residency:
+  owned_and_lived_full_year_2025: true
+income:
+  max: 200000
+maximum_annualized_benefit:
+  - income_min: 0
+    income_max: 100000
+    amount: 6500
+  - income_min_exclusive: 100000
+    income_max: 150000
+    amount: 5000
+  - income_min_exclusive: 150000
+    income_max: 200000
+    amount: 4000
+notes:
+  - Renters and mobile-home owners are not eligible for Stay NJ.
+  - The current post-budget program page supersedes older pre-budget PAS-1 Stay NJ income figures.
+  - MVP identifies candidate status only and does not promise an exact benefit.
+sources:
+  - nj_stay_nj_2026_07_27
+  - nj_property_tax_relief_faq_2026_06_05

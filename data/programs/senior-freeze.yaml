@@ -1,0 +1,25 @@
+program_id: senior_freeze
+name: Senior Freeze
+full_name: Senior Freeze (Property Tax Reimbursement)
+jurisdiction: NJ
+tax_year: 2025
+filing_deadline: 2026-11-02
+candidate_only: true
+applicant_types:
+  - homeowner
+  - mobile_home_owner
+age_or_disability:
+  age_at_least_on_2025_12_31: 65
+  qualifying_disability_benefit: true
+ownership_and_residency:
+  owned_and_lived_since_on_or_before: 2022-12-31
+  must_still_own_and_live_on: 2025-12-31
+income:
+  total_annual_income_2024_max: 168268
+  total_annual_income_2025_max: 172475
+notes:
+  - Qualifying disability means actually receiving federal Social Security Disability or Railroad Retirement disability benefits by December 31, 2025.
+  - MVP does not calculate reimbursement amount or model base-year exceptions.
+sources:
+  - nj_senior_freeze_eligibility_2026_06_22
+  - nj_property_tax_relief_faq_2026_06_05

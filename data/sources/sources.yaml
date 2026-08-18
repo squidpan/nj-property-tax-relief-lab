@@ -1,0 +1,58 @@
+sources:
+  - source_id: nj_anchor_eligibility_2026_01_29
+    authority_level: AUTH-1
+    authority: New Jersey Division of Taxation
+    title: ANCHOR Program - Eligibility
+    url: https://www.nj.gov/treasury/taxation/anchor/eligibility.shtml
+    document_type: current_program_page
+    tax_years: [2025]
+    published_or_updated: 2026-01-29
+    verified_date: 2026-08-17
+    status: current
+
+  - source_id: nj_senior_freeze_eligibility_2026_06_22
+    authority_level: AUTH-1
+    authority: New Jersey Division of Taxation
+    title: Senior Freeze Eligibility Requirements
+    url: https://www.nj.gov/treasury/taxation/ptr/eligibility.shtml
+    document_type: current_program_page
+    tax_years: [2025]
+    published_or_updated: 2026-06-22
+    verified_date: 2026-08-17
+    status: current
+
+  - source_id: nj_stay_nj_2026_07_27
+    authority_level: AUTH-1
+    authority: New Jersey Division of Taxation
+    title: Stay NJ - Property Tax Relief for Senior Citizens
+    url: https://www.nj.gov/treasury/taxation/staynj/index.shtml
+    document_type: current_program_page
+    tax_years: [2024, 2025]
+    published_or_updated: 2026-07-27
+    verified_date: 2026-08-17
+    status: current
+
+  - source_id: nj_property_tax_relief_faq_2026_06_05
+    authority_level: AUTH-3
+    authority: New Jersey Division of Taxation
+    title: Property Tax Relief Programs FAQs
+    url: https://www.nj.gov/treasury/taxation/propertytaxrelieffaq.shtml
+    document_type: current_official_faq
+    tax_years: [2025]
+    published_or_updated: 2026-06-05
+    verified_date: 2026-08-17
+    status: current
+
+  - source_id: nj_pas1_instructions_2025
+    authority_level: AUTH-2
+    authority: New Jersey Division of Taxation
+    title: 2025 PAS-1 Application Instructions
+    url: https://www.nj.gov/treasury/taxation/pdf/25-pas1in.pdf
+    document_type: official_form_instructions
+    tax_years: [2025]
+    published_or_updated: 2025-10-01
+    verified_date: 2026-08-17
+    status: current_with_superseded_fields
+    notes: >-
+      Some Stay NJ figures in the instructions predate the FY2027 Appropriations Act.
+      Current post-budget Stay NJ program-page values take precedence where they conflict.

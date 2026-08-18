@@ -1,0 +1,36 @@
+ruleset_id: nj_property_tax_relief_2025
+jurisdiction: NJ
+tax_year: 2025
+filing_deadline: 2026-11-02
+status_values:
+  - candidate
+  - not_candidate
+  - needs_official_review
+filing_paths:
+  pas1:
+    form: PAS-1
+    when:
+      any:
+        - applicant_age_at_end_of_2025_gte: 65
+        - qualifying_disability_benefit: true
+  anchor:
+    form: ANCHOR
+    when:
+      all:
+        - applicant_age_at_end_of_2025_lt: 65
+        - qualifying_disability_benefit: false
+special_case_triggers:
+  - deceased_applicant
+  - trust_or_life_estate
+  - domestic_partnership_or_complex_coownership
+  - multiple_residences
+  - multi_unit_property
+  - continuing_care_or_assisted_living
+  - pilot_or_nonstandard_property_tax
+  - prior_senior_freeze_base_year_issue
+  - unknown_residency_or_ownership_history
+sources:
+  - nj_anchor_eligibility_2026_01_29
+  - nj_senior_freeze_eligibility_2026_06_22
+  - nj_stay_nj_2026_07_27
+  - nj_property_tax_relief_faq_2026_06_05

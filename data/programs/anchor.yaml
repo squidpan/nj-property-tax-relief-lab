@@ -1,0 +1,24 @@
+program_id: anchor
+name: ANCHOR
+full_name: Affordable New Jersey Communities for Homeowners and Renters
+jurisdiction: NJ
+tax_year: 2025
+filing_deadline: 2026-11-02
+candidate_only: true
+applicant_types:
+  - homeowner
+  - renter
+  - mobile_home_owner
+reference_date: 2025-10-01
+income:
+  homeowner_max_nj_gross_income: 250000
+  renter_max_nj_gross_income: 150000
+filing_path:
+  senior_or_qualifying_disability: PAS-1
+  under_65_no_qualifying_disability: ANCHOR
+notes:
+  - Mobile-home owners are treated as renters for ANCHOR.
+  - MVP evaluates only simplified candidate status and does not determine final eligibility.
+sources:
+  - nj_anchor_eligibility_2026_01_29
+  - nj_property_tax_relief_faq_2026_06_05
