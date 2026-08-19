@@ -47,6 +47,7 @@ def build_site(
     root = root or Path.cwd()
     templates_dir = root / "templates"
     static_dir = root / "static"
+    public_dir = root / "public"
     output = output_dir or (root / "site")
     if output.exists():
         shutil.rmtree(output)
@@ -79,6 +80,8 @@ def build_site(
         target.write_text(env.get_template(template_name).render(**page_context), encoding="utf-8")
 
     shutil.copytree(static_dir, output / "static", dirs_exist_ok=True)
+    if public_dir.exists():
+        shutil.copytree(public_dir, output, dirs_exist_ok=True)
     config = "window.NJPTR_CONFIG = " + json.dumps(_decision_config(programs), indent=2) + ";\n"
     (output / "static/js/decision-config.js").write_text(config, encoding="utf-8")
 

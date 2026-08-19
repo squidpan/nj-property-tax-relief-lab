@@ -48,3 +48,13 @@ def test_official_resources_render_source_titles_not_python_methods(tmp_path: Pa
     assert "Senior Freeze Eligibility Requirements" in html
     assert "Stay NJ - Property Tax Relief for Senior Citizens" in html
     assert "built-in method title" not in html
+
+def test_public_root_assets_are_copied_to_site_root(tmp_path: Path):
+    output = build_site(tmp_path / "site")
+    verification_file = output / "googlee4acd0bdef57edbb.html"
+
+    assert verification_file.is_file()
+    assert (
+        verification_file.read_text(encoding="utf-8")
+        == "google-site-verification: googlee4acd0bdef57edbb.html"
+    )
